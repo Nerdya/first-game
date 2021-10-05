@@ -40,7 +40,7 @@ public class Player extends GameObject {
 			
 			GameObject tempObject = handler.object.get(i);
 			
-			if (tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy) {
+			if (tempObject.getId() == ID.BasicEnemy || tempObject.getId() == ID.FastEnemy || tempObject.getId() == ID.SmartEnemy) {
 				if (getBounds().intersects(tempObject.getBounds())) {
 					//collision code
 					HUD.HEALTH -= 2;
@@ -55,8 +55,8 @@ public class Player extends GameObject {
 		
 		Graphics2D g2d = (Graphics2D) g;
 		
-		g.setColor(Color.red);
-		g2d.draw(getBounds());
+//		g.setColor(Color.red);
+//		g2d.draw(getBounds());
 		
 		g.setColor(Color.white);
 		g.fillRect(x, y, 32, 32);

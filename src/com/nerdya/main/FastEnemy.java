@@ -10,11 +10,10 @@ public class FastEnemy extends GameObject {
 
 	public FastEnemy(int x, int y, ID id, Handler handler) {
 		super(x, y, id);
-		
 		this.handler = handler;
 		
 		speedX = 2;
-		speedY = 8;
+		speedY = 80;
 	}
 	
 	public Rectangle getBounds() {

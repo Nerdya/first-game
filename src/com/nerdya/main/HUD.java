@@ -6,7 +6,7 @@ import java.awt.Graphics;
 public class HUD {
 	
 	public static int HEALTH = 100;
-	private int greenValue = 255;
+//	private int greenValue = 255;
 	
 	private int score = 0;
 	private int level = 1;
@@ -14,9 +14,9 @@ public class HUD {
 	public void tick() {
 		
 		HEALTH = Game.clamp(HEALTH, 0, 100);
-		greenValue = Game.clamp(greenValue, 0, 255);
+//		greenValue = Game.clamp(greenValue, 0, 255);
 		
-		greenValue = 255 * HEALTH / 100;
+//		greenValue = 255 * HEALTH / 100;
 		
 		score++;
 	}
@@ -24,7 +24,8 @@ public class HUD {
 	public void render(Graphics g) {
 		g.setColor(Color.gray);
 		g.fillRect(16, 16, 200, 16);
-		g.setColor(new Color(255 - greenValue, greenValue, 0));
+//		g.setColor(new Color(255 - greenValue, greenValue, 0));
+		g.setColor(Color.getHSBColor((1f * HEALTH) / 360, 1f, 1f));
 		g.fillRect(16, 16, HEALTH * 2, 16);
 		g.setColor(Color.white);
 		g.drawRect(16, 16, 200, 16);
